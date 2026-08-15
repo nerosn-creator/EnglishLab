@@ -70,12 +70,19 @@ export default function App() {
   const handleSelectGradeFromModal = (gradeId) => {
     setSelectedGradeId(gradeId);
     if (gradeId !== 'all') {
-      if (testMode === 'preschool' || testMode === 'tutorials' || testMode === 'camera_scanner') {
+      if (testMode === 'tutorials') {
+        // Stay in tutorials mode, just let the GradeTutorials component see the updated selectedGradeId
+        return;
+      }
+      if (testMode === 'preschool' || testMode === 'camera_scanner') {
         setTestMode('grades');
       } else {
         initQuizSession(testMode === 'all' ? 'grades' : testMode, gradeId);
       }
     } else {
+      if (testMode === 'tutorials') {
+        setTestMode('grades'); // If they select 'All Grades', tutorials doesn't support it, jump back to quiz
+      }
       initQuizSession(testMode, 'all');
     }
   };

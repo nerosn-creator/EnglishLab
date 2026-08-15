@@ -807,6 +807,373 @@ button {
   flex-shrink: 0;
 }
 
+.gt-section-header {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.gt-grammar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.gt-grammar-rule-card {
+  background: var(--bg-accent);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gt-rule-title {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: white;
+}
+
+.gt-formula-label {
+  font-weight: 800;
+  color: var(--color-primary-light);
+  font-size: 0.9rem;
+  margin-bottom: 0.375rem;
+}
+
+.gt-rule-explanation {
+  font-size: 1rem;
+  color: #e2e8f0;
+  line-height: 1.65;
+}
+
+.gt-examples-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.gt-examples-header {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+}
+
+.gt-example-text {
+  flex: 1;
+}
+
+.gt-ex-en {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: white;
+}
+
+.gt-ex-zh {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.gt-ex-note {
+  color: var(--color-primary-light);
+  font-weight: 700;
+}
+
+/* VOCABULARY CARDS GRID */
+.gt-vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.gt-vocab-card {
+  background: var(--bg-accent);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.gt-vocab-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.gt-vocab-word {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: white;
+}
+
+.gt-vocab-pos {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-left: 0.375rem;
+}
+
+.gt-vocab-phonetic {
+  font-family: monospace;
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+}
+
+.gt-vocab-trans {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: white;
+}
+
+.gt-vocab-def {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+.gt-vocab-ex-box {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+.gt-vocab-ex-en {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: white;
+  font-style: italic;
+}
+
+.gt-vocab-ex-zh {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* EXAM TIPS & QUIZ */
+.gt-tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.gt-tip-card {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.gt-tip-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gt-tip-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gt-tip-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: white;
+}
+
+.gt-tip-desc {
+  font-size: 1rem;
+  color: #e2e8f0;
+}
+
+.gt-tip-trap {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: #fcd34d;
+}
+
+.gt-quiz-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gt-quiz-card {
+  background: var(--bg-accent);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gt-quiz-q-num {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--color-primary-light);
+}
+
+.gt-quiz-prompt {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: white;
+}
+
+.gt-quiz-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.gt-quiz-opt {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  padding: 0.875rem 1.125rem;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.gt-quiz-opt:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--color-primary-light);
+}
+
+.gt-quiz-opt.selected {
+  border-color: var(--color-primary);
+  background: rgba(99, 102, 241, 0.2);
+}
+
+.gt-quiz-opt.correct {
+  border-color: var(--color-success);
+  background: var(--color-success-bg);
+  color: white;
+}
+
+.gt-quiz-opt.wrong {
+  border-color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+.gt-check-text {
+  font-size: 0.8rem;
+  color: var(--color-success);
+  font-weight: 800;
+}
+
+.gt-quiz-explanation {
+  background: rgba(16, 185, 129, 0.1);
+  border-left: 4px solid var(--color-success);
+  padding: 0.875rem 1.125rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: white;
+}
+
+.gt-quiz-action-bar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gt-btn-check-quiz {
+  background: linear-gradient(135deg, var(--color-accent), #059669);
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-md);
+  font-size: 1.05rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+}
+
+.gt-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.gt-badge-cefr {
+  background: var(--color-primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.gt-badge-exam {
+  background: rgba(236, 72, 153, 0.15);
+  border: 1px solid rgba(236, 72, 153, 0.3);
+  color: var(--color-ielts);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.gt-hero-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.gt-hero-desc {
+  font-size: 1rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.gt-pill-title {
+  font-weight: 900;
+}
+
+.gt-pill-cefr {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
 /* ==========================================================================
    CAMERA WORD SCANNER & SOLVER STYLES
    ========================================================================== */

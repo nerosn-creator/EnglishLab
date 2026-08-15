@@ -59,8 +59,14 @@ body {
   overflow-x: hidden;
 }
 
-button, input, select {
+/* Global Reset to eliminate browser un-styled default buttons */
+button {
   font-family: inherit;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
 }
 
 /* App Main Layout */
@@ -72,7 +78,7 @@ button, input, select {
 
 /* Header Component */
 .app-header {
-  background: rgba(19, 27, 46, 0.9);
+  background: rgba(19, 27, 46, 0.95);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
   position: sticky;
@@ -195,7 +201,7 @@ button, input, select {
   border-color: var(--color-primary);
 }
 
-/* Navigation Tabs */
+/* Navigation Tabs Header */
 .mode-nav-bar {
   max-width: 1200px;
   margin: 0 auto;
@@ -213,15 +219,15 @@ button, input, select {
 
 .mode-tab {
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   color: var(--color-text-muted);
-  padding: 0.5rem 1rem;
+  padding: 0.55rem 1.125rem;
   border-radius: 999px;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.375rem;
   transition: all 0.2s ease;
@@ -230,12 +236,13 @@ button, input, select {
 
 .mode-tab:hover {
   color: var(--color-text-main);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .mode-tab.active {
   color: white;
   background: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
 }
 
 /* Main Content Workspace */
@@ -247,7 +254,7 @@ button, input, select {
   padding: 0 1rem;
 }
 
-/* Question Card & Quiz Workspace */
+/* Question Card & Options (RESTORED BEAUTIFUL STYLES) */
 .quiz-workspace {
   width: 100%;
 }
@@ -319,7 +326,6 @@ button, input, select {
   font-weight: 700;
 }
 
-/* Mutation Container & Badges */
 .mutation-container {
   background: rgba(15, 23, 42, 0.8);
   border: 1px dashed rgba(99, 102, 241, 0.4);
@@ -394,28 +400,6 @@ button, input, select {
   background: rgba(255, 255, 255, 0.05);
 }
 
-.mutation-logs-panel {
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--border-color);
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-}
-
-.logs-title {
-  font-weight: 700;
-  color: var(--color-text-main);
-  margin-bottom: 0.375rem;
-}
-
-.logs-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-/* Question Title & Prompt */
 .question-title {
   font-size: 1.35rem;
   font-weight: 800;
@@ -432,7 +416,6 @@ button, input, select {
   line-height: 1.6;
 }
 
-/* Options Grid & Cards (CRITICAL RESTORATION) */
 .options-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -499,7 +482,6 @@ button, input, select {
   line-height: 1.5;
 }
 
-/* Action Footer & Submit Buttons */
 .card-action-footer {
   display: flex;
   justify-content: flex-end;
@@ -535,7 +517,232 @@ button, input, select {
   box-shadow: var(--shadow-glow);
 }
 
-/* CAMERA WORD SCANNER & OCR CHIPS (CRITICAL RESTORATION) */
+/* ==================== PRESCHOOL TODDLER MODE STYLES (SCREENSHOT 1 FIX) ==================== */
+.preschool-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.preschool-tabs {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ps-tab-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--color-text-muted);
+  padding: 0.625rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.ps-tab-btn:hover {
+  color: white;
+  border-color: var(--color-secondary);
+}
+
+.ps-tab-btn.active {
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.35);
+}
+
+.ps-card-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.ps-score-badge {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--color-toefl);
+  padding: 0.375rem 1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.btn-ps-speak {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.35);
+  transition: transform 0.15s ease;
+}
+
+.btn-ps-speak:hover {
+  transform: translateY(-2px);
+}
+
+.ps-options-grid {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.ps-option-btn {
+  background: var(--bg-accent);
+  border: 2px solid var(--border-color);
+  color: white;
+  padding: 1rem 1.75rem;
+  border-radius: var(--radius-lg);
+  font-size: 1.25rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  transition: all 0.2s ease;
+  min-width: 130px;
+  justify-content: center;
+}
+
+.ps-option-btn:hover {
+  border-color: var(--color-secondary);
+  background: rgba(14, 165, 233, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.25);
+}
+
+/* ==================== 1-12 GRADE TUTORIALS (SCREENSHOT 2 FIX) ==================== */
+.tutorials-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tutorials-grade-bar {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.25rem 0.25rem 0.75rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.grade-tab-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--color-text-muted);
+  padding: 0.625rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.grade-tab-btn:hover {
+  background: var(--bg-card-hover);
+  color: white;
+  border-color: var(--color-primary-light);
+}
+
+.grade-tab-btn.active {
+  background: linear-gradient(135deg, var(--color-primary), #4338ca);
+  color: white;
+  border-color: var(--color-primary-light);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+}
+
+.lesson-nav-tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+  overflow-x: auto;
+}
+
+.lesson-nav-tab {
+  background: var(--bg-accent);
+  border: 1px solid var(--border-color);
+  color: var(--color-text-muted);
+  padding: 0.625rem 1.125rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.lesson-nav-tab:hover {
+  color: white;
+  background: var(--bg-card-hover);
+  border-color: var(--color-primary-light);
+}
+
+.lesson-nav-tab.active {
+  color: white;
+  background: var(--color-primary);
+  border-color: var(--color-primary-light);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn-speak-inline {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
+  color: var(--color-secondary);
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-right: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-speak-inline:hover {
+  background: rgba(14, 165, 233, 0.2);
+  color: white;
+}
+
+/* ==================== CAMERA WORD SCANNER & UPLOAD BUTTONS (SCREENSHOT 3 FIX) ==================== */
 .scanner-container {
   display: flex;
   flex-direction: column;
@@ -558,7 +765,7 @@ button, input, select {
   font-weight: 800;
   font-size: 0.95rem;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   transition: all 0.2s ease;
@@ -569,6 +776,60 @@ button, input, select {
   background: rgba(14, 165, 233, 0.18);
   color: white;
   box-shadow: 0 0 15px rgba(14, 165, 233, 0.3);
+}
+
+.scan-upload-box {
+  background: var(--bg-card);
+  border: 2px dashed rgba(14, 165, 233, 0.4);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.scan-upload-box:hover {
+  border-color: var(--color-secondary);
+  background: rgba(14, 165, 233, 0.08);
+  transform: translateY(-2px);
+}
+
+.upload-icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+}
+
+.btn-upload-trigger {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.35);
+  transition: transform 0.15s ease;
+}
+
+.btn-upload-trigger:hover {
+  transform: translateY(-2px);
 }
 
 .scanned-results-section {
@@ -619,52 +880,6 @@ button, input, select {
   font-size: 0.8rem;
   color: var(--color-secondary);
   font-weight: 600;
-}
-
-/* 1-12 GRADE TUTORIALS DESKTOP & MOBILE STYLES */
-.tutorials-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.tutorials-grade-bar {
-  display: flex;
-  gap: 0.5rem;
-  overflow-x: auto;
-  padding: 0.25rem 0.25rem 0.75rem;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-}
-
-.grade-tab-btn {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--color-text-muted);
-  padding: 0.625rem 1rem;
-  border-radius: var(--radius-md);
-  font-size: 0.85rem;
-  font-weight: 800;
-  cursor: pointer;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-}
-
-.grade-tab-btn:hover {
-  background: var(--bg-card-hover);
-  color: white;
-  border-color: var(--color-primary-light);
-}
-
-.grade-tab-btn.active {
-  background: linear-gradient(135deg, var(--color-primary), #4338ca);
-  color: white;
-  border-color: var(--color-primary-light);
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
 }
 
 /* Modal Overlay & Inspector */

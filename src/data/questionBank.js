@@ -1,3 +1,5 @@
+import { IELTS_TOEFL_QUESTION_BANK } from './ieltsToeflBank';
+
 export const RAW_QUESTION_BANK = [
   // --- GRADE 0 (Pre-K / Toddler) ---
   {
@@ -351,5 +353,8 @@ export const RAW_QUESTION_BANK = [
     intent: "評估考生能否撰寫具備學術嚴謹度、反駁論證與高階詞彙的 8.0+ 範文架構。",
     distractorAnalysis: [],
     academicEtymology: "obsolete (adj. 被淘汰的/過時的) ↔ outmoded / superseded | pedagogy (n. 教育學/教學法) ↔ instruction / educational science"
-  }
+  },
+
+  // --- IELTS & TOEFL DEDICATED EXAM BANK (40+ questions) ---
+  ...IELTS_TOEFL_QUESTION_BANK,
 ];

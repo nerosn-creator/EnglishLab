@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Volume2, Sparkles, Trophy, RefreshCw, Star, Heart, Award } from 'lucide-react';
+import { Volume2, Sparkles, Trophy, RefreshCw, Star } from 'lucide-react';
 
 const PRESCHOOL_FLASHCARDS = [
   {
@@ -11,12 +11,11 @@ const PRESCHOOL_FLASHCARDS = [
     translation: "蘋果",
     color: "#ef4444",
     emoji: "🍎",
-    iconSvg: `<svg viewBox="0 0 100 100" class="ps-card-svg"><circle cx="50" cy="55" r="35" fill="#ef4444"/><path d="M50 20 Q55 35 45 35 Z" fill="#15803d"/><path d="M50 20 Q48 10 52 5" stroke="#78350f" stroke-width="4" fill="none"/></svg>`,
-    questionPrompt: "哪個是 Apple (蘋果) 呢？點點看！",
+    questionPrompt: "哪個是 Apple 蘋果呢？點點看！",
     options: [
-      { text: "Apple 蘋果", emoji: "🍎", isCorrect: true },
-      { text: "Banana 香蕉", emoji: "🍌", isCorrect: false },
-      { text: "Cat 貓咪", emoji: "🐱", isCorrect: false }
+      { text: "Apple", emoji: "🍎", translation: "蘋果", isCorrect: true },
+      { text: "Banana", emoji: "🍌", translation: "香蕉", isCorrect: false },
+      { text: "Cat", emoji: "🐱", translation: "貓咪", isCorrect: false }
     ]
   },
   {
@@ -28,12 +27,11 @@ const PRESCHOOL_FLASHCARDS = [
     translation: "香蕉",
     color: "#eab308",
     emoji: "🍌",
-    iconSvg: `<svg viewBox="0 0 100 100" class="ps-card-svg"><path d="M20 70 Q60 90 85 25 Q70 50 20 70 Z" fill="#eab308"/><path d="M85 25 Q88 20 90 15" stroke="#78350f" stroke-width="4" fill="none"/></svg>`,
-    questionPrompt: "哪個是 Banana (香蕉) 呢？點點看！",
+    questionPrompt: "哪個是 Banana 香蕉呢？點點看！",
     options: [
-      { text: "Dog 狗狗", emoji: "🐶", isCorrect: false },
-      { text: "Banana 香蕉", emoji: "🍌", isCorrect: true },
-      { text: "Elephant 大象", emoji: "🐘", isCorrect: false }
+      { text: "Dog", emoji: "🐶", translation: "狗狗", isCorrect: false },
+      { text: "Banana", emoji: "🍌", translation: "香蕉", isCorrect: true },
+      { text: "Elephant", emoji: "🐘", translation: "大象", isCorrect: false }
     ]
   },
   {
@@ -45,12 +43,11 @@ const PRESCHOOL_FLASHCARDS = [
     translation: "貓咪",
     color: "#f97316",
     emoji: "🐱",
-    iconSvg: `<svg viewBox="0 0 100 100" class="ps-card-svg"><circle cx="50" cy="55" r="30" fill="#f97316"/><polygon points="25,35 35,15 45,32" fill="#f97316"/><polygon points="75,35 65,15 55,32" fill="#f97316"/><circle cx="40" cy="50" r="4" fill="#fff"/><circle cx="60" cy="50" r="4" fill="#fff"/><circle cx="40" cy="50" r="2" fill="#000"/><circle cx="60" cy="50" r="2" fill="#000"/></svg>`,
-    questionPrompt: "聽發音，哪個是 Cat (貓咪) 呢？",
+    questionPrompt: "哪個是 Cat 貓咪呢？點點看！",
     options: [
-      { text: "Cat 貓咪", emoji: "🐱", isCorrect: true },
-      { text: "Fish 小魚", emoji: "🐟", isCorrect: false },
-      { text: "Apple 蘋果", emoji: "🍎", isCorrect: false }
+      { text: "Cat", emoji: "🐱", translation: "貓咪", isCorrect: true },
+      { text: "Fish", emoji: "🐟", translation: "小魚", isCorrect: false },
+      { text: "Apple", emoji: "🍎", translation: "蘋果", isCorrect: false }
     ]
   },
   {
@@ -62,12 +59,11 @@ const PRESCHOOL_FLASHCARDS = [
     translation: "紅色",
     color: "#dc2626",
     emoji: "🔴",
-    iconSvg: `<svg viewBox="0 0 100 100" class="ps-card-svg"><circle cx="50" cy="50" r="40" fill="#dc2626"/></svg>`,
-    questionPrompt: "哪個是 Red (紅色) 呢？",
+    questionPrompt: "哪個是 Red 紅色呢？",
     options: [
-      { text: "Blue 藍色", emoji: "🔵", isCorrect: false },
-      { text: "Red 紅色", emoji: "🔴", isCorrect: true },
-      { text: "Green 綠色", emoji: "🟢", isCorrect: false }
+      { text: "Blue", emoji: "🔵", translation: "藍色", isCorrect: false },
+      { text: "Red", emoji: "🔴", translation: "紅色", isCorrect: true },
+      { text: "Green", emoji: "🟢", translation: "綠色", isCorrect: false }
     ]
   },
   {
@@ -79,12 +75,11 @@ const PRESCHOOL_FLASHCARDS = [
     translation: "狗狗",
     color: "#a16207",
     emoji: "🐶",
-    iconSvg: `<svg viewBox="0 0 100 100" class="ps-card-svg"><circle cx="50" cy="50" r="32" fill="#d97706"/><ellipse cx="25" cy="40" rx="10" ry="20" fill="#92400e"/><ellipse cx="75" cy="40" rx="10" ry="20" fill="#92400e"/><circle cx="42" cy="45" r="4" fill="#000"/><circle cx="58" cy="45" r="4" fill="#000"/></svg>`,
-    questionPrompt: "汪汪汪！哪個是 Dog (狗狗) 呢？",
+    questionPrompt: "汪汪！哪個是 Dog 狗狗呢？",
     options: [
-      { text: "Dog 狗狗", emoji: "🐶", isCorrect: true },
-      { text: "Cat 貓咪", emoji: "🐱", isCorrect: false },
-      { text: "Bird 小鳥", emoji: "🐦", isCorrect: false }
+      { text: "Dog", emoji: "🐶", translation: "狗狗", isCorrect: true },
+      { text: "Cat", emoji: "🐱", translation: "貓咪", isCorrect: false },
+      { text: "Bird", emoji: "🐦", translation: "小鳥", isCorrect: false }
     ]
   }
 ];
@@ -107,7 +102,7 @@ export default function PreschoolPractice() {
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = "en-US";
-    utterance.rate = 0.8;
+    utterance.rate = 0.85;
     window.speechSynthesis.speak(utterance);
   };
 
@@ -136,111 +131,104 @@ export default function PreschoolPractice() {
   };
 
   return (
-    <div className="ps-main-wrapper">
-      {/* Category Tabs Header */}
-      <div className="ps-category-bar">
+    <div className="ps-single-page-layout">
+      {/* Category Tabs Top Row */}
+      <div className="ps-nav-pills">
         <button 
-          className={`ps-tab-btn ${activeCategory === 'all' ? 'active' : ''}`}
+          className={`ps-pill ${activeCategory === 'all' ? 'active' : ''}`}
           onClick={() => { setActiveCategory('all'); setCurrentIndex(0); }}
         >
-          <Sparkles size={16} /> 全部幼幼單字 (All)
+          <Sparkles size={14} /> 全部
         </button>
 
         <button 
-          className={`ps-tab-btn ${activeCategory === 'alphabet' ? 'active' : ''}`}
+          className={`ps-pill ${activeCategory === 'alphabet' ? 'active' : ''}`}
           onClick={() => { setActiveCategory('alphabet'); setCurrentIndex(0); }}
         >
-          🔤 ABC 自然發音
+          🔤 ABC
         </button>
 
         <button 
-          className={`ps-tab-btn ${activeCategory === 'colors' ? 'active' : ''}`}
+          className={`ps-pill ${activeCategory === 'colors' ? 'active' : ''}`}
           onClick={() => { setActiveCategory('colors'); setCurrentIndex(0); }}
         >
-          🎨 顏色與形狀
+          🎨 顏色
         </button>
 
         <button 
-          className={`ps-tab-btn ${activeCategory === 'animals' ? 'active' : ''}`}
+          className={`ps-pill ${activeCategory === 'animals' ? 'active' : ''}`}
           onClick={() => { setActiveCategory('animals'); setCurrentIndex(0); }}
         >
-          🐶 可愛動物夥伴
+          🐶 動物
         </button>
+
+        <div className="ps-score-tag">
+          <Trophy size={14} className="text-warning" /> 得分: <strong>{score}</strong>
+        </div>
       </div>
 
-      {/* Hero Visual Flashcard Container */}
-      <div className="ps-flashcard-container">
-        {/* Score & Badge Top Row */}
-        <div className="ps-card-header-row">
-          <div className="ps-badge-level">
-            <Star size={16} className="text-warning" /> 幼幼啟蒙 Level (Pre-A1)
+      {/* Single Screen Compact Card */}
+      <div className="ps-compact-card">
+        {/* Flashcard Header + Audio Button */}
+        <div className="ps-compact-header">
+          <div className="ps-word-info">
+            <span className="ps-letter-badge" style={{ color: currentCard.color }}>
+              {currentCard.letter}
+            </span>
+            <span className="ps-word-text">{currentCard.word}</span>
+            <span className="ps-trans-text">({currentCard.translation})</span>
           </div>
 
-          <div className="ps-badge-score">
-            <Trophy size={16} className="text-warning" /> 幼兒獎勵積分: <strong>{score} 分</strong>
-          </div>
-        </div>
-
-        {/* Visual Flashcard Image Box */}
-        <div className="ps-image-card-box" style={{ borderColor: currentCard.color }}>
-          <div className="ps-emoji-display">{currentCard.emoji}</div>
-          
-          <div className="ps-word-title-box">
-            <h1 className="ps-letter-title" style={{ color: currentCard.color }}>
-              {currentCard.letter} – {currentCard.word}
-            </h1>
-            <p className="ps-phonetic-sub">{currentCard.phonetics} • {currentCard.translation}</p>
-          </div>
-
-          {/* Voice Audio Speaker Button */}
           <button 
-            className="ps-big-speak-btn"
+            className="ps-btn-speak-compact"
             onClick={() => handleSpeak(`${currentCard.word}. ${currentCard.translation}`)}
           >
-            <Volume2 size={24} /> 點擊大聲聽發音: "{currentCard.word}"
+            <Volume2 size={18} /> 發音
           </button>
         </div>
 
-        {/* Interactive Quiz Question Prompt */}
-        <div className="ps-question-box">
-          <h2 className="ps-prompt-text">{currentCard.questionPrompt}</h2>
-
-          {/* Large Visual Option Cards */}
-          <div className="ps-options-container">
-            {currentCard.options.map((option, idx) => {
-              const isSelected = selectedOption === idx;
-              let optionClass = "ps-option-card";
-              if (isSelected) {
-                optionClass += option.isCorrect ? " correct" : " wrong";
-              }
-
-              return (
-                <button
-                  key={idx}
-                  className={optionClass}
-                  onClick={() => handleOptionClick(option, idx)}
-                >
-                  <span className="ps-option-emoji">{option.emoji}</span>
-                  <span className="ps-option-label">{option.text}</span>
-                  {isSelected && option.isCorrect && <span className="ps-check-mark">✓答對了！</span>}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Feedback & Next Button */}
-          {feedback && (
-            <div className="ps-feedback-footer">
-              <div className={`ps-feedback-msg ${feedback}`}>
-                {feedback === 'correct' ? '🎉 太棒了！答對囉！+10分' : '💪 加油！再試一次喔！'}
-              </div>
-
-              <button className="ps-btn-next" onClick={handleNextCard}>
-                下一題 <RefreshCw size={18} />
-              </button>
-            </div>
-          )}
+        {/* Compact Visual Center Box */}
+        <div className="ps-visual-box" style={{ borderColor: currentCard.color }}>
+          <div className="ps-visual-emoji">{currentCard.emoji}</div>
         </div>
+
+        {/* Prompt Question */}
+        <div className="ps-prompt-bar">{currentCard.questionPrompt}</div>
+
+        {/* Side-by-Side 3-Column Option Grid */}
+        <div className="ps-options-row">
+          {currentCard.options.map((option, idx) => {
+            const isSelected = selectedOption === idx;
+            let optClass = "ps-opt-card";
+            if (isSelected) {
+              optClass += option.isCorrect ? " correct" : " wrong";
+            }
+
+            return (
+              <button
+                key={idx}
+                className={optClass}
+                onClick={() => handleOptionClick(option, idx)}
+              >
+                <span className="ps-opt-emoji">{option.emoji}</span>
+                <span className="ps-opt-title">{option.text}</span>
+                <span className="ps-opt-sub">{option.translation}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Next Action Footer */}
+        {feedback && (
+          <div className="ps-footer-action">
+            <span className={`ps-result-tag ${feedback}`}>
+              {feedback === 'correct' ? '🎉 答對囉！+10分' : '💪 再試一次！'}
+            </span>
+            <button className="ps-btn-next-compact" onClick={handleNextCard}>
+              下一題 <RefreshCw size={16} />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

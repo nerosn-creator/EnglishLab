@@ -1,88 +1,6 @@
 import React, { useState } from 'react';
-import { Volume2, Sparkles, Trophy, RefreshCw, Star } from 'lucide-react';
-
-const PRESCHOOL_FLASHCARDS = [
-  {
-    id: "abc_01",
-    category: "alphabet",
-    letter: "Aa",
-    word: "Apple",
-    phonetics: "/ˈæp.əl/",
-    translation: "蘋果",
-    color: "#ef4444",
-    emoji: "🍎",
-    questionPrompt: "哪個是 Apple 蘋果呢？點點看！",
-    options: [
-      { text: "Apple", emoji: "🍎", translation: "蘋果", isCorrect: true },
-      { text: "Banana", emoji: "🍌", translation: "香蕉", isCorrect: false },
-      { text: "Cat", emoji: "🐱", translation: "貓咪", isCorrect: false }
-    ]
-  },
-  {
-    id: "abc_02",
-    category: "alphabet",
-    letter: "Bb",
-    word: "Banana",
-    phonetics: "/bəˈnæn.ə/",
-    translation: "香蕉",
-    color: "#eab308",
-    emoji: "🍌",
-    questionPrompt: "哪個是 Banana 香蕉呢？點點看！",
-    options: [
-      { text: "Dog", emoji: "🐶", translation: "狗狗", isCorrect: false },
-      { text: "Banana", emoji: "🍌", translation: "香蕉", isCorrect: true },
-      { text: "Elephant", emoji: "🐘", translation: "大象", isCorrect: false }
-    ]
-  },
-  {
-    id: "abc_03",
-    category: "alphabet",
-    letter: "Cc",
-    word: "Cat",
-    phonetics: "/kæt/",
-    translation: "貓咪",
-    color: "#f97316",
-    emoji: "🐱",
-    questionPrompt: "哪個是 Cat 貓咪呢？點點看！",
-    options: [
-      { text: "Cat", emoji: "🐱", translation: "貓咪", isCorrect: true },
-      { text: "Fish", emoji: "🐟", translation: "小魚", isCorrect: false },
-      { text: "Apple", emoji: "🍎", translation: "蘋果", isCorrect: false }
-    ]
-  },
-  {
-    id: "colors_01",
-    category: "colors",
-    letter: "Red",
-    word: "Red",
-    phonetics: "/red/",
-    translation: "紅色",
-    color: "#dc2626",
-    emoji: "🔴",
-    questionPrompt: "哪個是 Red 紅色呢？",
-    options: [
-      { text: "Blue", emoji: "🔵", translation: "藍色", isCorrect: false },
-      { text: "Red", emoji: "🔴", translation: "紅色", isCorrect: true },
-      { text: "Green", emoji: "🟢", translation: "綠色", isCorrect: false }
-    ]
-  },
-  {
-    id: "animals_01",
-    category: "animals",
-    letter: "Dog",
-    word: "Dog",
-    phonetics: "/dɑːɡ/",
-    translation: "狗狗",
-    color: "#a16207",
-    emoji: "🐶",
-    questionPrompt: "汪汪！哪個是 Dog 狗狗呢？",
-    options: [
-      { text: "Dog", emoji: "🐶", translation: "狗狗", isCorrect: true },
-      { text: "Cat", emoji: "🐱", translation: "貓咪", isCorrect: false },
-      { text: "Bird", emoji: "🐦", translation: "小鳥", isCorrect: false }
-    ]
-  }
-];
+import { Volume2, Sparkles, Trophy, RefreshCw } from 'lucide-react';
+import { PRESCHOOL_FLASHCARDS } from '../data/preschoolData';
 
 export default function PreschoolPractice() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -100,9 +18,12 @@ export default function PreschoolPractice() {
   const handleSpeak = (text) => {
     if (!window.speechSynthesis) return;
     window.speechSynthesis.cancel();
+    
+    // IMPORTANT FIX: Only pass the English word to the en-US voice engine!
+    // Passing Chinese characters to en-US voice causes garbled sounds.
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = "en-US";
-    utterance.rate = 0.85;
+    utterance.rate = 0.85; // Slightly slower for kids
     window.speechSynthesis.speak(utterance);
   };
 
@@ -113,7 +34,8 @@ export default function PreschoolPractice() {
     if (option.isCorrect) {
       setScore(prev => prev + 10);
       setFeedback("correct");
-      handleSpeak(`Great job! ${currentCard.word}`);
+      // Speak ONLY English!
+      handleSpeak(`Great! ${currentCard.word}`);
     } else {
       setFeedback("wrong");
       handleSpeak("Try again!");
@@ -142,10 +64,10 @@ export default function PreschoolPractice() {
         </button>
 
         <button 
-          className={`ps-pill ${activeCategory === 'alphabet' ? 'active' : ''}`}
-          onClick={() => { setActiveCategory('alphabet'); setCurrentIndex(0); }}
+          className={`ps-pill ${activeCategory === 'fruits' ? 'active' : ''}`}
+          onClick={() => { setActiveCategory('fruits'); setCurrentIndex(0); }}
         >
-          🔤 ABC
+          🍎 水果
         </button>
 
         <button 
@@ -181,7 +103,8 @@ export default function PreschoolPractice() {
 
           <button 
             className="ps-btn-speak-compact"
-            onClick={() => handleSpeak(`${currentCard.word}. ${currentCard.translation}`)}
+            // ONLY speak the English word!
+            onClick={() => handleSpeak(currentCard.word)}
           >
             <Volume2 size={18} /> 發音
           </button>

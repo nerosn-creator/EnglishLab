@@ -120,7 +120,7 @@ export const GRADE_BENCHMARKS = [
 
 export const TEST_MODES = [
   { id: "all", name: "全階段綜合測驗", desc: "混合所有年級與檢定題目" },
-  { id: "camera_scanner", name: "📷 拍照即查發音與翻譯", desc: "拍照或上傳圖片辨識英文單字、發音帶讀與中文翻譯" },
+  { id: "camera_scanner", name: "📝 拍功課解題與翻譯", desc: "拍學生功課/試卷 AI 自主作答、全文翻譯與詳細解題導師" },
   { id: "tutorials", name: "📚 1-12 年級學習教程", desc: "文法句型解析、單字發音帶讀與解題技巧" },
   { id: "preschool", name: "🎈 兒童幼幼專區", desc: "圖像發音、ABC 自然發音與動物顏色遊戲" },
   { id: "grades", name: "1-12 年級重點評測", desc: "依據中小學與高中英語課綱重點評測" },

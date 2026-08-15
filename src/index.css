@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
 
 :root {
   --font-family: 'Plus Jakarta Sans', 'Noto Sans TC', system-ui, -apple-system, sans-serif;
@@ -11,7 +11,7 @@
 
   --color-primary: #6366f1;
   --color-primary-light: #818cf8;
-  --color-primary-glow: rgba(99, 102, 241, 0.25);
+  --color-primary-glow: rgba(99, 102, 241, 0.35);
   
   --color-secondary: #0ea5e9;
   --color-accent: #10b981;
@@ -24,22 +24,22 @@
   --color-text-dim: #64748b;
 
   --color-success: #10b981;
-  --color-success-bg: rgba(16, 185, 129, 0.12);
+  --color-success-bg: rgba(16, 185, 129, 0.15);
   --color-danger: #ef4444;
-  --color-danger-bg: rgba(239, 68, 68, 0.12);
+  --color-danger-bg: rgba(239, 68, 68, 0.15);
   --color-warning: #f59e0b;
-  --color-warning-bg: rgba(245, 158, 11, 0.12);
+  --color-warning-bg: rgba(245, 158, 11, 0.15);
 
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-color-active: rgba(99, 102, 241, 0.5);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color-active: rgba(99, 102, 241, 0.6);
 
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
 
-  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.35);
-  --shadow-glow: 0 0 25px var(--color-primary-glow);
+  --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 30px var(--color-primary-glow);
 }
 
 * {
@@ -59,7 +59,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Global Reset to eliminate browser un-styled default buttons */
 button {
   font-family: inherit;
   border: none;
@@ -103,8 +102,8 @@ button {
 }
 
 .logo-icon-box {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   border-radius: var(--radius-md);
   display: flex;
@@ -116,7 +115,7 @@ button {
 }
 
 .brand-name {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -148,7 +147,7 @@ button {
   padding: 0.5rem 0.875rem;
   border-radius: var(--radius-sm);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
   min-height: 40px;
@@ -171,13 +170,13 @@ button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   color: var(--color-accent);
   padding: 0.5rem 0.875rem;
   border-radius: var(--radius-sm);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   min-height: 40px;
 }
 
@@ -201,7 +200,7 @@ button {
   border-color: var(--color-primary);
 }
 
-/* Navigation Tabs Header */
+/* Mode Navigation Bar */
 .mode-nav-bar {
   max-width: 1200px;
   margin: 0 auto;
@@ -221,17 +220,17 @@ button {
   background: transparent;
   border: 1px solid transparent;
   color: var(--color-text-muted);
-  padding: 0.55rem 1.125rem;
+  padding: 0.6rem 1.25rem;
   border-radius: 999px;
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 800;
   cursor: pointer;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
   transition: all 0.2s ease;
-  min-height: 38px;
+  min-height: 40px;
 }
 
 .mode-tab:hover {
@@ -242,10 +241,10 @@ button {
 .mode-tab.active {
   color: white;
   background: var(--color-primary);
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 4px 18px rgba(99, 102, 241, 0.4);
 }
 
-/* Main Content Workspace */
+/* Main Content Body Container */
 .main-content-body {
   flex: 1;
   max-width: 1040px;
@@ -254,7 +253,290 @@ button {
   padding: 0 1rem;
 }
 
-/* Question Card & Options (RESTORED BEAUTIFUL STYLES) */
+/* ==========================================================================
+   GIANT HIGH-IMPACT PRESCHOOL FLASHCARDS STYLING (SOLUTION FOR USER FEEDBACK)
+   ========================================================================== */
+.ps-main-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.ps-category-bar {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ps-tab-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--color-text-muted);
+  padding: 0.75rem 1.35rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.ps-tab-btn:hover {
+  color: white;
+  border-color: var(--color-secondary);
+}
+
+.ps-tab-btn.active {
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+}
+
+.ps-flashcard-container {
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.ps-card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ps-badge-level {
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: var(--color-primary-light);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ps-badge-score {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: var(--color-toefl);
+  padding: 0.4rem 1.125rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* GIANT FLASHCARD IMAGE BOX (180px - 220px HIGH RESOLUTION DISPLAY) */
+.ps-image-card-box {
+  background: radial-gradient(circle at center, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+  border: 4px solid var(--color-primary);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  transition: transform 0.25s ease;
+}
+
+.ps-image-card-box:hover {
+  transform: scale(1.02);
+}
+
+.ps-emoji-display {
+  font-size: 8rem; /* GIANT 128px HIGH-IMPACT ICON */
+  line-height: 1;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.5));
+  animation: floatBounce 3s infinite ease-in-out;
+}
+
+@keyframes floatBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.ps-word-title-box {
+  text-align: center;
+}
+
+.ps-letter-title {
+  font-size: 2.75rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.ps-phonetic-sub {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  font-weight: 700;
+}
+
+.ps-big-speak-btn {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-md);
+  font-size: 1.15rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+  transition: all 0.2s ease;
+}
+
+.ps-big-speak-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.6);
+}
+
+.ps-question-box {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.ps-prompt-text {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+}
+
+/* GIANT TOUCHABLE CHOICE CARDS */
+.ps-options-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.ps-option-card {
+  background: var(--bg-accent);
+  border: 3px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 140px;
+  position: relative;
+}
+
+.ps-option-card:hover {
+  border-color: var(--color-secondary);
+  background: rgba(14, 165, 233, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.3);
+}
+
+.ps-option-card.correct {
+  border-color: var(--color-success);
+  background: var(--color-success-bg);
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
+}
+
+.ps-option-card.wrong {
+  border-color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+.ps-option-emoji {
+  font-size: 3.5rem; /* LARGE CHOICE EMOJI */
+  line-height: 1;
+}
+
+.ps-option-label {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+}
+
+.ps-check-mark {
+  color: var(--color-success);
+  font-weight: 900;
+  font-size: 0.95rem;
+}
+
+.ps-feedback-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.ps-feedback-msg {
+  font-size: 1.2rem;
+  font-weight: 900;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.ps-feedback-msg.correct {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+
+.ps-feedback-msg.wrong {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+}
+
+.ps-btn-next {
+  background: linear-gradient(135deg, var(--color-primary), #4338ca);
+  color: white;
+  border: none;
+  padding: 0.875rem 2.25rem;
+  border-radius: var(--radius-md);
+  font-size: 1.1rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* ==========================================================================
+   QUESTION CARD & QUIZ WORKSPACE STYLES
+   ========================================================================== */
 .quiz-workspace {
   width: 100%;
 }
@@ -395,11 +677,6 @@ button {
   border-radius: 4px;
 }
 
-.btn-text-info:hover {
-  color: white;
-  background: rgba(255, 255, 255, 0.05);
-}
-
 .question-title {
   font-size: 1.35rem;
   font-weight: 800;
@@ -512,132 +789,9 @@ button {
   box-shadow: none;
 }
 
-.btn-submit-answer:hover:not(:disabled), .btn-next-question:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow);
-}
-
-/* ==================== PRESCHOOL TODDLER MODE STYLES (SCREENSHOT 1 FIX) ==================== */
-.preschool-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.preschool-tabs {
-  display: flex;
-  gap: 0.75rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.ps-tab-btn {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--color-text-muted);
-  padding: 0.625rem 1.25rem;
-  border-radius: 999px;
-  font-weight: 800;
-  font-size: 0.95rem;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.2s ease;
-}
-
-.ps-tab-btn:hover {
-  color: white;
-  border-color: var(--color-secondary);
-}
-
-.ps-tab-btn.active {
-  background: linear-gradient(135deg, #ec4899, #8b5cf6);
-  color: white;
-  border-color: transparent;
-  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.35);
-}
-
-.ps-card-wrapper {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
-  padding: 2rem;
-  box-shadow: var(--shadow-card);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.ps-score-badge {
-  background: rgba(245, 158, 11, 0.15);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  color: var(--color-toefl);
-  padding: 0.375rem 1rem;
-  border-radius: 999px;
-  font-weight: 800;
-  font-size: 0.95rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-}
-
-.btn-ps-speak {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.625rem;
-  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-md);
-  font-size: 1.05rem;
-  font-weight: 800;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.35);
-  transition: transform 0.15s ease;
-}
-
-.btn-ps-speak:hover {
-  transform: translateY(-2px);
-}
-
-.ps-options-grid {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-top: 0.5rem;
-}
-
-.ps-option-btn {
-  background: var(--bg-accent);
-  border: 2px solid var(--border-color);
-  color: white;
-  padding: 1rem 1.75rem;
-  border-radius: var(--radius-lg);
-  font-size: 1.25rem;
-  font-weight: 800;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.625rem;
-  transition: all 0.2s ease;
-  min-width: 130px;
-  justify-content: center;
-}
-
-.ps-option-btn:hover {
-  border-color: var(--color-secondary);
-  background: rgba(14, 165, 233, 0.15);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.25);
-}
-
-/* ==================== 1-12 GRADE TUTORIALS (SCREENSHOT 2 FIX) ==================== */
+/* ==========================================================================
+   1-12 GRADE TUTORIALS STYLES
+   ========================================================================== */
 .tutorials-wrapper {
   display: flex;
   flex-direction: column;
@@ -668,12 +822,6 @@ button {
   gap: 0.5rem;
   transition: all 0.2s ease;
   flex-shrink: 0;
-}
-
-.grade-tab-btn:hover {
-  background: var(--bg-card-hover);
-  color: white;
-  border-color: var(--color-primary-light);
 }
 
 .grade-tab-btn.active {
@@ -708,12 +856,6 @@ button {
   transition: all 0.2s ease;
 }
 
-.lesson-nav-tab:hover {
-  color: white;
-  background: var(--bg-card-hover);
-  border-color: var(--color-primary-light);
-}
-
 .lesson-nav-tab.active {
   color: white;
   background: var(--color-primary);
@@ -721,28 +863,9 @@ button {
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
-.btn-speak-inline {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid var(--border-color);
-  color: var(--color-secondary);
-  padding: 0.375rem 0.75rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
-  font-weight: 700;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  margin-right: 0.5rem;
-  transition: all 0.2s ease;
-}
-
-.btn-speak-inline:hover {
-  background: rgba(14, 165, 233, 0.2);
-  color: white;
-}
-
-/* ==================== CAMERA WORD SCANNER & UPLOAD BUTTONS (SCREENSHOT 3 FIX) ==================== */
+/* ==========================================================================
+   CAMERA WORD SCANNER & SOLVER STYLES
+   ========================================================================== */
 .scanner-container {
   display: flex;
   flex-direction: column;
@@ -792,12 +915,6 @@ button {
   justify-content: center;
 }
 
-.scan-upload-box:hover {
-  border-color: var(--color-secondary);
-  background: rgba(14, 165, 233, 0.08);
-  transform: translateY(-2px);
-}
-
 .upload-icon-circle {
   width: 64px;
   height: 64px;
@@ -825,11 +942,6 @@ button {
   gap: 0.5rem;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(14, 165, 233, 0.35);
-  transition: transform 0.15s ease;
-}
-
-.btn-upload-trigger:hover {
-  transform: translateY(-2px);
 }
 
 .scanned-results-section {
@@ -857,11 +969,6 @@ button {
   cursor: pointer;
   transition: all 0.2s ease;
   min-width: 140px;
-}
-
-.word-chip-btn:hover {
-  border-color: var(--color-secondary);
-  transform: translateY(-2px);
 }
 
 .word-chip-btn.active {
